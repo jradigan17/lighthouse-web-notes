@@ -5,4 +5,5 @@ Flex Schedule Day stream template - July 11.pdf:com.dropbox.attrs
 
 *.pdf
 *.mov
-module1/
+*.mp4
+*.attrs

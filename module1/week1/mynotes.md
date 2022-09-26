@@ -1,4 +1,4 @@
-## **Notes**
+## **Notes Week 1**
 [Markdown Cheetsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) & [Shortcut Keys](../../shortcuts.md)
 
 Comand Line Arguments:
@@ -11,13 +11,13 @@ runtime = node, java, sh, etc.
 ---------------------------------------------------
 
 ## **Prompt Code**
-
+```
 {
   "dependencies": {
     "prompt-sync": "^4.1.5"
   }
 }
-
+```
 let prompt = require("prompt-sync")();
 
 let input = prompt("What would you like to be the start and end number (seperated with a space)? ");
@@ -25,6 +25,8 @@ let input = prompt("What would you like to be the start and end number (seperate
 ---------------------------------------------------
 
 ## **Various commands**
+
+`npm install -g eslint` eslint
 
 `Number()` - takes a string to a number
 

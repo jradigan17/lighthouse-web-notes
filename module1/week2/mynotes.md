@@ -1,4 +1,4 @@
-## **Notes**
+## **Notes Week 2**
 [Markdown Cheetsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) & [Shortcut Keys](../../shortcuts.md)
 
 In JavaScript, all values which are not Objects are collectively referred to as primitives
@@ -39,6 +39,7 @@ An object constructor can be invoked with the word new
 
 `this.name` - calls within the object it's in
 
+```
 for (var key in p) {
     if (p.hasOwnProperty(key)) {
         console.log(key + " -> " + p[key]);
@@ -50,16 +51,23 @@ names.forEach((person, index) => {
   }
 });
 
+```
 **.filter**
+```
 const words = ['spray', 'limit', 'elite', 'exuberant', 'destruction', 'present'];
 const result = words.filter(word => word.length > 6);
+```
 
 **.map**
+
+```
 const array1 = [1, 4, 9, 16];
 // pass a function to map
 const map1 = array1.map(x => x * 2);
+```
 
 **.reduce**
+```
 const array1 = [1, 2, 3, 4];
 // 0 + 1 + 2 + 3 + 4
 const initialValue = 0;
@@ -67,12 +75,13 @@ const sumWithInitial = array1.reduce(
   (previousValue, currentValue) => previousValue + currentValue,
   initialValue
 );
-
+```
 ---------------------------------------------------
 
 ## **Tips**
 
 **In line callback functions**
+```
 const findWaldo = function(names, found) {
   names.forEach((person, index) => {
     if (person === "Waldo") {
@@ -84,15 +93,19 @@ const findWaldo = function(names, found) {
 findWaldo(["Alice", "Bob", "Waldo", "Winston"], function(index) {
   console.log(`Found Waldo at index ${index}!`);
 });
+```
 
 BEFORE: anonymous callback as function expression 
+```
 [1,2,3].forEach(function (num) {
   console.log('num: ', num);
 });
-
+```
 AFTER: anonymous callback as arrow function
+```
 [1,2,3].forEach((num) => {
   console.log('num: ', num);
 });
 
 [1,2,3].forEach(num => console.log('num: ', num));
+```

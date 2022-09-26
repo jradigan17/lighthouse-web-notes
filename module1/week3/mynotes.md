@@ -1,5 +1,7 @@
-## **Notes**
+## **Notes Week 3**
 [Markdown Cheetsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet) & [Shortcut Keys](../../shortcuts.md)
+
+---------------------------------------------------
 
 ### **Reference Code from another file**
 
@@ -14,7 +16,7 @@ Every File In Node Is A Module
 Library - collection of code 
 
 Package - npm various codes and files. Generally has a package.json
-
+```
 {
   "name": "project-name",
   "version": "1.0.0",
@@ -30,7 +32,7 @@ Package - npm various codes and files. Generally has a package.json
     "express": "^4.13.4"
   }
 }
-
+```
 - The dependencies section of package.json lists the packages that need to be installed for the project to run properly. In the above example it lists a package called express, and the value ^4.13.4 specifies the version.
 
 BDD or Behavior Driven Development
@@ -53,9 +55,13 @@ Mocha & Chai install `npm install mocha chai --save-dev`
 
 `nvm list`, `nvm version`, `nvm use 16.15.1`
 
+`assert.strictEqual` uses `===` - cannot be used for objects or arrays
+
+`assert.deepEqual` - can be used for objects and arrays
+
 ---------------------------------------------------
 
-## **Tips**
+## **Classes Tips**
 
 Classes - Always start with capital
 
@@ -66,7 +72,7 @@ To create a new object from a class, we use the new keyword:
 pizza1 and pizza2 are pizza objects. When you create an object using a class, it is an instance of that class. So pizza1 and pizza2 are instances of the Pizza class.
 
 `pizza1 === pizza2; // false`
-
+```
 class Pizza {
 
   constructor() {
@@ -90,9 +96,9 @@ class SomeClass {
     this.hello = "hi"; // Created a property called hello
   }
 }
-
+```
 constructor is a special kind of method that gets executed when an object instance is created from a class. Everything inside the Pizza's constructor method will get run for the new instance of the class when we call new Pizza();. This is a great place to setup default state for new instances. In other words, the constructor is for setting default values for any new object's properties.
-
+```
 class Pizza {
 
   constructor(size, crust) {
@@ -115,9 +121,10 @@ greeting == objGreeting;
 
 greeting === objGreeting; 
 // => false
+```
 We see above that despite having the same string content, the primitive string is not the exact same as an object string. However, using == allows JS to convert one of them so that their types match. To avoid these kinds of issues, it's generally considered bad practice to use object constructors when you're creating primitives, but object constructors are extremely useful for instantiating the complex objects that you'll be defining with your classes in the future.
 
-
+```
 class Student extends Person {
   // stays in Student class since it's specific to students only
   enroll(cohort) {
@@ -136,6 +143,25 @@ class Mentor extends Person {
     this.onShift = false;
   }
 }
+```
 Student and Mentor are subclasses of the Person class, since they are extensions of that class. Person is the superclass in this relationship.
 
 Recursion - always needs a base case & a recursive case 
+```
+function find(node, value) {
+    if (node.value === value) {
+        return node;
+    } else {
+        for (let i = 0; i < node.children.length; i++) {
+            let found = find(node.children[i], value);
+            if (found !== null) {
+                return found;
+            }
+        }
+
+        return null;
+    }
+}
+
+assert.equal(find(tree, 21).name, 'H');
+```
